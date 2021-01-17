@@ -10,11 +10,12 @@ import {
   IonAvatar,
 } from "@ionic/react";
 import { logInOutline, menuOutline } from "ionicons/icons";
-import MobileMenu from "../MobileMenu";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import { useAuth } from "../../contexts/AuthContext";
-import UserMenuPopover from "../UserMenuPopover";
+import UserMenuPopover from "../UserMenuPopover/UserMenuPopover";
 import { useLocation } from 'react-router-dom';
 
+import Time from '../Time/Time';
 import "./BaseTemplate.css";
 
 export default function BaseTemplate({
@@ -58,6 +59,9 @@ export default function BaseTemplate({
       {window.innerWidth < 990 ? <MobileMenu /> : ""}
       <IonHeader style={{ textAlign: "center" }}>
         <IonToolbar color="primary">
+          <div className="time-div">
+            {window.innerWidth > 990 && <Time />}
+          </div>
           <IonButtons slot="start">
             {window.innerWidth < 990 ? (
               <IonButton onClick={handleMenuToggle}>
@@ -77,7 +81,7 @@ export default function BaseTemplate({
             >
               {currentUser ? (
                 <IonAvatar style={{ height: 35, width: 35 }}>
-                  <img src="https://media-s3-us-east-1.ceros.com/target/images/2020/04/08/178be3d4d5254d66adee4d3dc6d0bcd8/bullseyenor-17-wht-9in.png" alt="user avatar" />
+                  <img src="/assets/profile-icon.png" alt="user avatar" />
                 </IonAvatar>
               ) : (
                 <IonIcon size="large" icon={logInOutline}></IonIcon>
@@ -90,9 +94,6 @@ export default function BaseTemplate({
         <div className="background">
           <div className="page-content">
             {children}
-          </div>
-          <div className="background-contrast">
-
           </div>
         </div>
       </IonContent>

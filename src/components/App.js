@@ -8,22 +8,21 @@ import { fetchUsers } from '../actions';
 import { AuthProvider } from '../contexts/AuthContext';
 
 import PrivateRoute from './PrivateRoute';
-import ForgotPassword from './ForgotPassword';
-import UpdateProfile from './UpdateProfile';
-import Signup from './Signup';
-import Dashboard from './Dashboard';
-import Login from './Login';
-import AddNewUser from './AddNewUser';
-import Menu from './Menu';
-import UserView from './UserView';
-import Home from './Home';
-import EditUser from './EditUser'; 
-import NewEstate from './NewEstate';
-import NewStand from './NewStand';
-import EstateConfig from './EstateConfig';
-import EntryLogs from './EntryLogs';
-import Settings from './Settings';
-import EditStand from './EditStand';
+import ForgotPassword from './ForgotPassword/ForgotPassword';
+import UpdateProfile from './UpdateProfile/UpdateProfile';
+import Signup from './Signup/Signup';
+import Dashboard from './Dashboard/Dashboard';
+import Login from './Login/Login';
+import AddNewUser from './AddNewUser/AddNewUser';
+import Menu from './Menu/Menu';
+import EditUser from './EditUser/EditUser'; 
+import NewEstate from './NewEstate/NewEstate';
+import NewStand from './NewStand/NewStand';
+import EstateConfig from './EstateConfig/EstateConfig';
+import EntryLogs from './EntryLogs/EntryLogs';
+import Settings from './Settings/Settings';
+import EditStand from './EditStand/EditStand';
+import Profile from './Profile/Profile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -59,19 +58,18 @@ const App = () => {
                 <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/update-profile" component={UpdateProfile} setChangingPage={setChangingPage}/>
-                <Route exact path="/home" component={Home} />
                 <Route exact path="/login" render={() => <Login setChangingPage={setChangingPage} />}/>  
-                <Route exact path="/new-estate" component={NewEstate} />
-                <Route exact path="/new-stand" component={NewStand} />
-                <Route exact path="/estate-config" component={EstateConfig} />
-                <Route exact path="/logs/:id" component={EntryLogs} />
+                <PrivateRoute exact path="/new-estate" component={NewEstate} />
+                <PrivateRoute exact path="/new-stand" component={NewStand} />
+                <PrivateRoute exact path="/estate-config" component={EstateConfig} />
+                <PrivateRoute exact path="/logs/:id" component={EntryLogs} />
                 <Route exact path="/signup" render={() => <Signup setChangingPage={setChangingPage} />} /> 
                 <Route exact path="/forgot-password" component={ForgotPassword} setChangingPage={setChangingPage}/> 
                 <PrivateRoute exact path="/new" component={AddNewUser} setChangingPage={setChangingPage}/> 
-                <Route exact path="/users/:id" render={() => <UserView />} />
-                <Route exact path="/users/edit/:id" render={() => <EditUser />} />
-                <Route exact path="/settings" component={Settings} />
-                <Route exact path="/edit-stand" component={EditStand} />
+                <PrivateRoute exact path="/users/edit/:id" component={EditUser} />
+                <PrivateRoute exact path="/settings" component={Settings} />
+                <PrivateRoute exact path="/edit-stand" component={EditStand} />
+                <PrivateRoute exact path="/profile" component={Profile} />
               </IonRouterOutlet>
             </IonSplitPane>
           </IonReactRouter>

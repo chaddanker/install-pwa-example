@@ -1,0 +1,17 @@
+
+.bottom-div {
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+h1 {
+    text-align: center; 
+    margin-bottom: 2em;
+}
+
+ion-avatar {
+    height: 100px; 
+    width: 100px; 
+    margin: 0 auto;
+}

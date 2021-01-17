@@ -1,0 +1,29 @@
+.add-new-item {
+    display: 'flex';
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+  .output{
+    height: 60px;
+    font-size: 0.8rem;
+  }
+  .error{
+    color: var(--error);
+  }
+  
+  /* progress bar styles */
+  .progress-bar {
+    height: 5px;
+    background: var(--ion-color-primary);
+    margin-top: 20px;
+  }
+
+  .add-new-user {
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    margin-top: 14em;
+  }

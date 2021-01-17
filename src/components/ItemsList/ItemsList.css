@@ -1,0 +1,14 @@
+.items-list {
+    margin-bottom: 6em; 
+    width: 100%; 
+    text-align: center;
+}
+
+ion-list {
+    width: 90%; 
+    margin: 0 auto;
+}
+
+ion-col {
+    text-align: center;
+}

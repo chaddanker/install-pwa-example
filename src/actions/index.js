@@ -193,6 +193,7 @@ export const fetchUser = id => async dispatch => {
 	// const response = await users.get(`/users/${id}`);
 
     const user = users.find(user => user.id === id);
+    console.log(user);
     //change back to response.payload when working with the API
 	dispatch({ type: FETCH_USER, payload: user });
 };
