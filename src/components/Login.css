@@ -1,0 +1,21 @@
+/* ion-button {
+    --border-radius: 50% !important;
+} */
+
+.login {
+    height: 100vh; 
+    display: flex; 
+    align-items: center;
+}
+
+.forgot-password-div {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.sign-up-div {
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}

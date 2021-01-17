@@ -1,0 +1,19 @@
+#mapContainer {
+    height: 200px;
+    width: 100%;
+}
+
+.user-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+ion-card {
+    width: '95%';
+}
+
+ion-slides {
+    width: '100%';
+}

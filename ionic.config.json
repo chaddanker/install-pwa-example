@@ -1,0 +1,7 @@
+{
+  "name": "restrive-template",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

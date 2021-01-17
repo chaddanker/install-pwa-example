@@ -1,0 +1,39 @@
+ion-header {
+    border-radius: 50% !important;
+}
+
+.header-md::after {
+    display: none;
+}
+
+ion-toolbar {
+    padding-top: 0.75em !important;
+    padding-bottom: 0.5em !important;
+    height: 4em;
+    border-bottom: 1px solid var(--ion-color-primary);
+}
+
+.background {
+    background-color: var(--ion-color-primary) !important;
+    height: 200vh;
+    text-align: center;
+}
+
+.page-content {
+    border-radius: 40px; 
+    z-index: 9999; 
+    overflow: hidden; 
+    background: var(--ion-color-primary-contrast);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 95%;
+    margin: auto;
+    text-align: left;
+}
+
+.background-contrast {
+    position: absolute;
+    bottom: 0;
+    height: 50vh;
+    width: 100%;
+    color: white;
+}
