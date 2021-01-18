@@ -36,7 +36,7 @@ export default function ForgotPassword() {
                         <IonCard>
                             <IonCardContent>
                                 {/* {currentUser.email} */}
-                                <h1 className="heading" style={{marginBottom: '2em'}}>Password Reset</h1>
+                                <h1 style={{marginBottom: '2em'}}>Password Reset</h1>
                                 <form onSubmit={handleSubmit}>
                                     <IonItem>
                                         <IonLabel position="floating">

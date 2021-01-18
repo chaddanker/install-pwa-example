@@ -23,7 +23,7 @@ export default function Login({ setChangingPage }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-
+        
         try {
             setError('');
             await login(emailRef.current.value, passwordRef.current.value);
@@ -70,6 +70,7 @@ export default function Login({ setChangingPage }) {
                                 </div>
                             </IonCardContent>                       
                         </IonCard>
+                        <br />
                         <div className="sign-up-div">
                             <IonText>
                                 Need an account? <Link to="/signup">Sign Up</Link>

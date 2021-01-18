@@ -71,12 +71,13 @@ export default class InstallButton extends Component {
           <IonButton
             onClick={this.onInstallBtnClicked}
             id="install"
-            expand="block"
+            expand="full"
             style={{
               cursor: "pointer",
               position: "absolute",
               bottom: 0,
-              width: "99%",
+              left: 0,
+              width: '100%'
             }}
           >
             install app

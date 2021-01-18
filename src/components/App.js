@@ -2,27 +2,17 @@ import React, { useState } from 'react';
 import { IonApp, IonRouterOutlet, IonPage, IonProgressBar, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
 
-import { fetchUsers } from '../actions';
 import { AuthProvider } from '../contexts/AuthContext';
 
 import PrivateRoute from './PrivateRoute';
 import ForgotPassword from './ForgotPassword/ForgotPassword';
 import UpdateProfile from './UpdateProfile/UpdateProfile';
 import Signup from './Signup/Signup';
-import Dashboard from './Dashboard/Dashboard';
 import Login from './Login/Login';
-import AddNewUser from './AddNewUser/AddNewUser';
 import Menu from './Menu/Menu';
-import EditUser from './EditUser/EditUser'; 
-import NewEstate from './NewEstate/NewEstate';
-import NewStand from './NewStand/NewStand';
-import EstateConfig from './EstateConfig/EstateConfig';
-import EntryLogs from './EntryLogs/EntryLogs';
-import Settings from './Settings/Settings';
-import EditStand from './EditStand/EditStand';
-import Profile from './Profile/Profile';
+import Dashboard from './Dashboard/Dashboard';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,6 +33,9 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import '../theme/variables.css';
 
+/* Core CSS */
+import '../theme/core.css';
+
 const App = () => {
   const [changingPage, setChangingPage] = useState(false);
 
@@ -55,21 +48,12 @@ const App = () => {
             <IonSplitPane contentId="main">
               <Menu />
               <IonRouterOutlet id="main">
-                <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+                <Route exact path="/" render={() => <Redirect to="/" />} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/update-profile" component={UpdateProfile} setChangingPage={setChangingPage}/>
                 <Route exact path="/login" render={() => <Login setChangingPage={setChangingPage} />}/>  
-                <PrivateRoute exact path="/new-estate" component={NewEstate} />
-                <PrivateRoute exact path="/new-stand" component={NewStand} />
-                <PrivateRoute exact path="/estate-config" component={EstateConfig} />
-                <PrivateRoute exact path="/logs/:id" component={EntryLogs} />
                 <Route exact path="/signup" render={() => <Signup setChangingPage={setChangingPage} />} /> 
                 <Route exact path="/forgot-password" component={ForgotPassword} setChangingPage={setChangingPage}/> 
-                <PrivateRoute exact path="/new" component={AddNewUser} setChangingPage={setChangingPage}/> 
-                <PrivateRoute exact path="/users/edit/:id" component={EditUser} />
-                <PrivateRoute exact path="/settings" component={Settings} />
-                <PrivateRoute exact path="/edit-stand" component={EditStand} />
-                <PrivateRoute exact path="/profile" component={Profile} />
               </IonRouterOutlet>
             </IonSplitPane>
           </IonReactRouter>
@@ -79,10 +63,4 @@ const App = () => {
   );
 };
 
-const mapStateToProps = ({ users }) => {
-	return {
-		users: Object.values(users),
-	};
-};
-
-export default connect(mapStateToProps, { fetchUsers })(App);
+export default App;

@@ -7,26 +7,21 @@ ion-header {
 }
 
 ion-toolbar {
-    padding-top: 0.75em !important;
-    padding-bottom: 0.5em !important;
-    height: 4em;
-    border-bottom: 1px solid var(--ion-color-primary);
     position: relative;
 }
 
 .background {
-    background-color: var(--ion-color-primary) !important;
+    /* background-color: var(--ion-color-primary) !important; */
     height: 220vh;
     text-align: center;
 }
 
 .page-content {
-    border-radius: 40px; 
+    /* border-radius: 40px;  */
     z-index: 9999; 
     overflow: hidden; 
     background: var(--ion-color-primary-contrast);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 95%;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     margin: auto;
     text-align: left;
 }

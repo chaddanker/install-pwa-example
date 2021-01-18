@@ -1,6 +1,23 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { auth } from '../firebase'
 
+//example axios post request
+// const token = localStorage.getItem('inovio-token')
+// const config = {
+//     headers: { Authorization: `Bearer ${token}` }
+// };
+
+// const body = {
+//    key: "value"
+// };
+
+// const res = inovioApi.post( 
+//   '/v1/endpoint',
+//   body,
+//   config
+// );
+// console.log(res);
+
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -15,7 +32,29 @@ export function AuthProvider({children}) {
         return auth.createUserWithEmailAndPassword(email, password)
     }
 
-    function login(email, password) {
+    async function login(email, password) {
+        // const uid = localStorage.getItem('inovio-uid')
+        // // check if uid exists in local storage if not create a new uid 
+        // if(!uid) {
+        //     uid = uid()
+        //     localStorage.setItem('inovio-uid', uid)
+        //     console.log(localStorage.getItem('inovio-uid'))
+        // } 
+        // const browserType = browserType()
+
+        // console.log(uid)
+        // const res = await inovioApi.post('/auth/login', {
+        //     email, 
+        //     password,
+        //     uid,
+        //     deviceInfo: navigator.userAgent
+        // })
+
+        // //returns token
+        // console.log(res)
+        // save token to localStorage
+        // const decodedJwt = jwtDecode("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTA5NzYxMzEsImV4cCI6MTYxMDk3NzAzMX0.6pfjlVGa6xdddls4LcPt9NLYJ4YFLS9dXRZxgIQRXsI")
+        // console.log(new Date(decodedJwt.exp));
         return auth.signInWithEmailAndPassword(email, password);
     }
 

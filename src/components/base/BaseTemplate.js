@@ -15,7 +15,6 @@ import { useAuth } from "../../contexts/AuthContext";
 import UserMenuPopover from "../UserMenuPopover/UserMenuPopover";
 import { useLocation } from 'react-router-dom';
 
-import Time from '../Time/Time';
 import "./BaseTemplate.css";
 
 export default function BaseTemplate({
@@ -59,9 +58,6 @@ export default function BaseTemplate({
       {window.innerWidth < 990 ? <MobileMenu /> : ""}
       <IonHeader style={{ textAlign: "center" }}>
         <IonToolbar color="primary">
-          <div className="time-div">
-            {window.innerWidth > 990 && <Time />}
-          </div>
           <IonButtons slot="start">
             {window.innerWidth < 990 ? (
               <IonButton onClick={handleMenuToggle}>
@@ -74,15 +70,14 @@ export default function BaseTemplate({
           <IonTitle><strong>{title}</strong></IonTitle>
           <IonButtons slot="end">
             <IonButton
+              style={{height: '40px'}}
               onClick={(e) => {
                 e.persist();
                 setShowUserPopover({ showPopover: true, event: e });
               }}
             >
               {currentUser ? (
-                <IonAvatar style={{ height: 35, width: 35 }}>
-                  <img src="/assets/profile-icon.png" alt="user avatar" />
-                </IonAvatar>
+                  <img style={{ height: 35, width: 35 }} src="/assets/white-circle.png" alt="user avatar" />
               ) : (
                 <IonIcon size="large" icon={logInOutline}></IonIcon>
               )}

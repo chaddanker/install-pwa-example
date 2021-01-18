@@ -8,6 +8,7 @@ export default function Search({style, setSearchQuery}) {
     
     useEffect(() => {
         setSearchQuery(searchText);
+        console.log(searchText);
     }, [searchText, setSearchQuery]);
 
     return (

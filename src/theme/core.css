@@ -1,0 +1,22 @@
+
+
+.row-body:hover {
+    background-color:  rgba(33, 35, 38, 0.1);
+    cursor: pointer;
+}
+
+
+.heading {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #333333;
+}
+
+ion-row {
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 1px 0px;
+}
+
+/* ion-row:hover {
+    background-color: #33333310;
+    cursor: pointer;
+} */
